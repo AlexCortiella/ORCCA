@@ -1,0 +1,52 @@
+# GMVAE-AEflow configuration file
+
+model_name: "CNNAE"
+
+#######################################
+###### DATA config ######
+#######################################
+
+data_dir: './data/kaggle_cats_and_dogs/PetImages'
+
+# snapshot_path: './results/snapshot_2.pt'
+logs_path: './results/logs'
+predictions_path: './results/predictions'
+generated_samples_path: './results/generated_samples'
+pretrained_path: ''
+
+#######################################
+###### MODEL config ######
+#######################################
+
+#CNNAE params
+latent_dim: 64
+img_size: [640, 640]
+
+
+#loss weighting factors
+w_rec: 1
+w_reg: 1
+w_entr: 1
+
+#######################################
+###### TRAINER config ######
+#######################################
+
+seed: 202211010
+batch_size: 8
+num_workers: 8
+learning_rate: 0.0005
+total_epochs: 2000
+numerical_tolerance: 0.000001
+save_every: 100
+restart: False
+early_stop: False
+cuda: True
+device: "gpu"
+num_devices: 2
+
+n_train: 2000
+n_valid: 200
+n_test: 10
+
+
